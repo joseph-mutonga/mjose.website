@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Return Book - Magereza Library</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Capture.JPG') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 500px;
+      color: #333;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0057b7;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #0057b7;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004099;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="form-container">
+      <h2>📤 Return Book</h2>
+      <form id="returnForm" onsubmit="returnBook(event)">
+        <input type="text" id="studentID" placeholder="Student ID" required>
+        <input type="text" id="bookTitle" placeholder="Book Title" required>
+        <input type="date" id="returnDate" required>
+        <button type="submit">Return Book</button>
+        <p>
+
+        </p>
+          <button type="back" onclick="back()">back to dashboard</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function back(){
+        window.location.href ="dashboard.html"
+    }
+    // Autofill return date with today's date
+    document.getElementById("returnDate").valueAsDate = new Date();
+
+    function returnBook(event) {
+      event.preventDefault();
+
+      const studentID = document.getElementById("studentID").value.trim();
+      const bookTitle = document.getElementById("bookTitle").value.trim();
+      const returnDate = document.getElementById("returnDate").value;
+
+      if (!studentID || !bookTitle || !returnDate) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      alert(`✅ "${bookTitle}" successfully returned by Student ID: ${studentID} on ${returnDate}.`);
+      document.getElementById("returnForm").reset();
+      document.getElementById("returnDate").valueAsDate = new Date();
+    }
+  </script>
+</body>
+</html>

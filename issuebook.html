@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assign Book to Student - Magereza Library</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Capture.JPG') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 500px;
+      color: #333;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0057b7;
+      margin-bottom: 1.5rem;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #0057b7;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004099;
+    }
+    h2{
+        text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="form-container">
+        <div>
+            <h2>MAGEREZA SECONDARY SCHOOL</h2>
+        </div>
+      <h2>📘 Assign Book to Student</h2>
+      <form id="assignForm" onsubmit="assignBook(event)">
+        <input type="text" id="studentName" placeholder="Student Name" required>
+        <input type="text" id="studentID" placeholder="Student ID" required>
+        <input type="text" id="bookTitle" placeholder="Book Title" required>
+        <input type="date" id="dueDate" required>
+        <button type="submit">Assign Book</button>
+        <p>
+
+        </p>
+         <button type="submit" onclick="back()">BACK</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function back(){
+      window.location.href ="dashboard.html"
+    }
+    function assignBook(event) {
+      event.preventDefault();
+
+      const studentName = document.getElementById('studentName').value.trim();
+      const studentID = document.getElementById('studentID').value.trim();
+      const bookTitle = document.getElementById('bookTitle').value.trim();
+      const dueDate = document.getElementById('dueDate').value;
+
+      if (!studentName || !studentID || !bookTitle || !dueDate) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      alert(`✅ Book "${bookTitle}" assigned to ${studentName} (ID: ${studentID}). Due: ${dueDate}`);
+      document.getElementById('assignForm').reset();
+    }
+  </script>
+</body>
+</html>
