@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Finance - Magereza School</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0057b7;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .finance-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0057b7;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 25px;
+      background-color: #0057b7;
+      color: white;
+      padding: 12px;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #004090;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      color: #0057b7;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>💰 Student Finance Panel</h1>
+  </header>
+
+  <div class="finance-container">
+    <h2>Record Payment or Fee Balance</h2>
+    <form action="save_finance.php" method="POST">
+      <label for="student_id">Student ID:</label>
+      <input type="text" id="student_id" name="student_id" required>
+
+      <label for="student_name">Student Name:</label>
+      <input type="text" id="student_name" name="student_name" required>
+
+      <label for="class">Class/Form:</label>
+      <select id="class" name="class" required>
+        <option value="">-- Select Class --</option>
+        <option value="Form 1">Form 1</option>
+        <option value="Form 2">Form 2</option>
+        <option value="Form 3">Form 3</option>
+        <option value="Form 4">Form 4</option>
+      </select>
+
+      <label for="payment_type">Transaction Type:</label>
+      <select id="payment_type" name="payment_type" required>
+        <option value="">-- Select Type --</option>
+        <option value="Fees Payment">Fees Payment</option>
+        <option value="Balance Update">Balance Update</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="amount">Amount (KES):</label>
+      <input type="number" id="amount" name="amount" min="0" required>
+
+      <label for="date">Transaction Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <button type="submit">Save Finance Record</button>
+    </form>
+
+    <div class="back-link">
+      <a href="dashboard.html">← Back to Staff Dashboard</a>
+    </div>
+  </div>
+
+</body>
+</html>
