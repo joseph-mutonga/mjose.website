@@ -3,96 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <title>Magereza Library Dashboard</title>
-   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-  <header>
-    <h1>📚 Magereza Mixed Secondary School - Library Dashboard</h1>
-  </header>
+  <!-- Toggle Menu Button -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-  <section class="dashboard">
-    <div class="card">
-      <h3>Total Books</h3>
-      <span id="totalBooks">1200</span>
-    </div>
-    <div class="card">
-      <h3>Borrowed Books</h3>
-      <span id="borrowedBooks">230</span>
-    </div>
-    <div class="card">
-      <h3>Registered Students</h3>
-      <span id="students">480</span>
-    </div>
-    <div class="card">
-      <h3>Overdue Books</h3>
-      <span id="overdue">17</span>
-    </div>
-  </section>
-  <section class="dashboard">
-    <div class="card">
-      <h3>📌 Quick Actions</h3>
-      <div class="actions">
-        <button onclick="addbook()" >Add New Book</button>
-        <button onclick="issuebook()">Issue Book</button>
-        <button onclick="returnbook()">Return Book</button>
-        <button onclick="reportgen()">Generate Report</button>
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <h2>📘 Menu</h2>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="sports.html">Sports Equipment</a></li>
+      <li><a href="farmtools.html">Farm Tools</a></li>
+      <li><a href="teachers.html">Teachers</a></li>
+      <li><a href="staionary.html">Stationery</a></li>
+      <li><a href="#">Exercise Books</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main content -->
+  <div class="main-content" id="mainContent">
+    <header>
+      <h1>📚 Magereza Mixed Secondary School - Library Dashboard</h1>
+    </header>
+
+    <section class="dashboard">
+      <div class="card">
+        <h3>Total Books</h3>
+        <span id="totalBooks">1200</span>
       </div>
-    </div>
-  </section>
-   <script>
-    function reportgen(){
-        window.location.href ="report.html"
+      <div class="card">
+        <h3>Borrowed Books</h3>
+        <span id="borrowedBooks">230</span>
+      </div>
+      <div class="card">
+        <h3>Registered Students</h3>
+        <span id="students">480</span>
+      </div>
+      <div class="card">
+        <h3>Overdue Books</h3>
+        <span id="overdue">17</span>
+      </div>
+      <div class="card">
+        <h3>Sports Equipment</h3>
+        <span id="sports">45</span>
+      </div>
+      <div class="card">
+        <h3>Farm Tools</h3>
+        <span id="farm">32</span>
+      </div>
+      <div class="card">
+        <h3>Teachers</h3>
+        <span id="teachers">26</span>
+      </div>
+      <div class="card">
+        <h3>Stationery Items</h3>
+        <span id="stationery">320</span>
+      </div>
+      <div class="card">
+        <h3>Exercise Books</h3>
+        <span id="exbooks">860</span>
+      </div>
+    </section>
+
+    <section class="dashboard">
+      <div class="card">
+        <h3>📌 Quick Actions</h3>
+        <div class="actions">
+          <button onclick="addbook()">Add New Book</button>
+          <button onclick="issuebook()">Issue Book</button>
+          <button onclick="returnbook()">Return Book</button>
+          <button onclick="reportgen()">Generate Report</button>
+        </div>
+      </div>
+    </section>
+
+  
+  </div>
+
+  <!-- ✅ JavaScript -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('active');
+      document.getElementById('mainContent').classList.toggle('shifted');
     }
-    function openNewWindow() {
-      window.open("addnewbook.html", "_blank"); 
-      // "_blank" opens in a new tab/window
+
+    function reportgen() {
+      window.location.href = "report.html";
     }
-    function addbook(){
-           window.location.href = "addingbook.html"
+
+    function addbook() {
+      window.location.href = "addingbook.html";
     }
-    function issuebook(){
-         window.location.href = "issuebook.html"
+
+    function issuebook() {
+      window.location.href = "issuebook.html";
     }
-    function returnbook(){
-        window.location.href ="returnbook.html"
+
+    function returnbook() {
+      window.location.href = "returnbook.html";
     }
   </script>
-  
-<footer>
-  <!-- About Us -->
-  <div class="footer-section">
-    <h3>About US</h3>
-    <p>
-      Here at Kitengela Magereza you are guaranteed that your child gets nothing but the best.
-      For any inquiries feel free to contact us and also you can check our social media platforms for more information.
-    </p>
-    <div class="social-icons">
-      <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    </div>
-  </div>
-
-  <!-- Information Links -->
-  <div class="footer-section">
-    <h3>Information Link</h3>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Learning</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
-
-  <!-- Contact Details -->
-  <div class="footer-section">
-    <h3>Contact Details</h3>
-    <p>Kitengela Town, Isinya Subcounty</p>
-    <p>P.O.Box 488-00242</p>
-    <p>+254712971378</p>
-  </div>
-</footer>
 </body>
 </html>

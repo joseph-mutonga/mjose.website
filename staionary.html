@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stationery - Magereza Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Toggle Menu -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <h2>📘 Menu</h2>
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="sports.html">Sports Equipment</a></li>
+      <li><a href="farm.html">Farm Tools</a></li>
+      <li><a href="teachers.html">Teachers</a></li>
+      <li><a href="stationery.html" class="active">Stationery</a></li>
+      <li><a href="books.html">Exercise Books</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content" id="mainContent">
+    <header>
+      <h1>✏️ Stationery Inventory</h1>
+    </header>
+
+    <section class="dashboard">
+      <div class="card">
+        <h3>Pens</h3>
+        <span>200</span>
+      </div>
+      <div class="card">
+        <h3>Pencils</h3>
+        <span>180</span>
+      </div>
+      <div class="card">
+        <h3>Rulers</h3>
+        <span>150</span>
+      </div>
+      <div class="card">
+        <h3>Rubbers</h3>
+        <span>100</span>
+      </div>
+      <div class="card">
+        <h3>Staplers</h3>
+        <span>15</span>
+      </div>
+      <div class="card">
+        <h3>Paper Clips</h3>
+        <span>300</span>
+      </div>
+    </section>
+
+    <section class="dashboard">
+      <div class="card">
+        <button onclick="window.location.href='dashboard.html'" style="padding: 10px 20px;">← Back to Dashboard</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('active');
+      document.getElementById('mainContent').classList.toggle('shifted');
+    }
+  </script>
+</body>
+</html>

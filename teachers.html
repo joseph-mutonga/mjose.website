@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teachers - Magereza Library</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <h2>📘 Menu</h2>
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="sports.html">Sports Equipment</a></li>
+      <li><a href="farm.html">Farm Tools</a></li>
+      <li><a href="teachers.html" class="active">Teachers</a></li>
+      <li><a href="stationery.html">Stationery</a></li>
+      <li><a href="books.html">Exercise Books</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content" id="mainContent">
+    <header>
+      <h1>👩‍🏫 Teacher Records</h1>
+    </header>
+
+    <section class="dashboard">
+      <div class="card">
+        <h3>Mr. John Mwangi</h3>
+        <p>Subject: Mathematics</p>
+        <p>Email: jmwang@magereza.ac.ke</p>
+      </div>
+
+      <div class="card">
+        <h3>Ms. Grace Wanjiku</h3>
+        <p>Subject: English</p>
+        <p>Email: gwanjiku@magereza.ac.ke</p>
+      </div>
+
+      <div class="card">
+        <h3>Mr. Peter Otieno</h3>
+        <p>Subject: Physics</p>
+        <p>Email: potieno@magereza.ac.ke</p>
+      </div>
+
+      <div class="card">
+        <h3>Ms. Faith Muthoni</h3>
+        <p>Subject: Computer Studies</p>
+        <p>Email: fmuthoni@magereza.ac.ke</p>
+      </div>
+    </section>
+
+    <section class="dashboard">
+      <div class="card">
+        <button onclick="window.location.href='dashboard.html'" style="padding: 10px 20px;">← Back to Dashboard</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('active');
+      document.getElementById('mainContent').classList.toggle('shifted');
+    }
+  </script>
+</body>
+</html>
