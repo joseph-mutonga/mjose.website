@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Staff Dashboard - Magereza School</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+    }
+
+    header {
+      background-color: #0057b7;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    .card button {
+      margin-top: 1rem;
+      padding: 10px 16px;
+      font-size: 14px;
+      background-color: #0057b7;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background-color: #004090;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>👷 Staff Dashboard - Magereza Secondary</h1>
+  </header>
+
+  <section class="dashboard">
+    <div class="card">
+      <h3>📚 Library Records</h3>
+      <button onclick="location.href='library_records.html'">View Records</button>
+    </div>
+
+    <div class="card">
+      <h3>📘 Issue Book</h3>
+      <button onclick="location.href='issue_book.html'">Issue Now</button>
+    </div>
+
+    <div class="card">
+      <h3>🧰 Maintenance Requests</h3>
+      <button onclick="location.href='maintenance.html'">Submit Request</button>
+    </div>
+
+    <div class="card">
+      <h3>💰 Finance Panel</h3>
+      <button onclick="location.href='finance.html'">Manage Finances</button>
+    </div>
+
+    <div class="card">
+      <h3>🔓 Logout</h3>
+      <button onclick="location.href='login.html'">Logout</button>
+    </div>
+  </section>
+
+</body>
+</html>
