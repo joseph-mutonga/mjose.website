@@ -88,7 +88,7 @@
         <label for="toDate">To Date</label>
         <input type="date" id="toDate" required>
 
-        <button type="submit">Generate Report</button>
+        <button type="submit" onclick="generateReport(event)">Generate Report</button>
             <p>
 
             </p>
@@ -107,6 +107,7 @@
     document.getElementById("toDate").value = today;
 
     function generateReport(event) {
+        window.location.href = "reports.html";
       event.preventDefault();
 
       const type = document.getElementById("reportType").value;

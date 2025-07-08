@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Report - Magereza</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Menu Button -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <h2>📘 Menu</h2>
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="sports.html">Sports Equipment</a></li>
+      <li><a href="farm.html">Farm Tools</a></li>
+      <li><a href="teachers.html">Teachers</a></li>
+      <li><a href="stationery.html">Stationery</a></li>
+      <li><a href="books.html">Exercise Books</a></li>
+      <li><a href="report.html" class="active">Report</a></li>
+      <li><a href="logout.html">Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-content" id="mainContent">
+    <header>
+      <h1>📊 Library Book Report</h1>
+    </header>
+
+    <section class="dashboard">
+      <div class="card" style="width: 100%;">
+        <canvas id="bookChart" height="100"></canvas>
+      </div>
+    </section>
+
+    <section class="dashboard">
+      <div class="card">
+        <button onclick="window.location.href='dashboard.html'" style="padding: 10px 20px;">← Back to Dashboard</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('active');
+      document.getElementById('mainContent').classList.toggle('shifted');
+    }
+
+    // Book data
+    const totalBooks = 1200;
+    const borrowedBooks = 230;
+    const overdueBooks = 17;
+    const remainingBooks = totalBooks - borrowedBooks;
+
+    const ctx = document.getElementById('bookChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Remaining Books', 'Overdue Books'],
+        datasets: [{
+          label: 'Book Count',
+          data: [remainingBooks, overdueBooks],
+          backgroundColor: ['#4caf50', '#e74c3c'],
+          borderRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              stepSize: 50
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          },
+          title: {
+            display: true,
+            text: 'Remaining vs Overdue Books'
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
